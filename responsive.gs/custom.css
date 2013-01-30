@@ -1,0 +1,52 @@
+/*
+#page_wrap
+{
+    width: 80%;
+}
+
+.container
+{
+}
+
+header h1 {
+    font-weight: bold;
+    line-height: 2em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    margin: 0.5em;
+}
+
+body, div, p 
+{
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+a {
+    color: rgb(63, 172, 93);
+}
+
+a:hover {
+    color: rgb(112, 68, 12);
+    text-decoration: none;
+}
+*/
+
+* {
+    box-sizing: content-box;
+}
+
+aside a.button
+{
+    font-size: 15px;
+}
+
+.row, .col, 
+.span_1, .span_2, .span_3, .span_4, .span_5, .span_6, .span_7, .span_8, .span_9, .span_10, .span_11, .span_12
+{
+    background-color:rgba(253, 233, 85, 0.3);
+    text-align: center;
+}
