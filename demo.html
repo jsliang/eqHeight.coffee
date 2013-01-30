@@ -1,0 +1,76 @@
+
+<style type="text/css">
+h1
+{
+    display: block;
+    clear: both;
+}
+
+.row
+{}
+
+.column
+{
+    border: 2px solid #000000;
+    margin: 5px;
+    padding: 5px;
+}
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="jquery.equalheight.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".row").equalHeight(".column");
+});
+</script>
+
+<h1>Before:</h1>
+<div style="display: block; clear: both;">
+    <div class="column" style="display: block; float: left; width: 200px;">
+        <p>Line 1</p>
+        <p>Line 2</p>
+        <p>Line 3</p>
+        <p>Line 4</p>
+    </div>
+    <div class="column" style="display: block; float: left; width: 200px;">
+        <p>Line 1</p>
+        <p>Line 2</p>
+        <p>Line 3</p>
+        <p>Line 4</p>
+        <p>Line 5</p>
+    </div>
+    <div class="column" style="display: block; float: left; width: 200px;">
+        <p>Line 1</p>
+    </div>
+    <div class="column" style="display: block; float: left; width: 200px;">
+        <p>Line 1</p>
+        <p>Line 2</p>
+        <p>Line 3</p>
+    </div>
+</div>
+
+<h1>After:</h1>
+<div class="row" style="display: block; clear: both;">
+    <div class="column" style="display: block; float: left; width: 200px;">
+        <p>Line 1</p>
+        <p>Line 2</p>
+        <p>Line 3</p>
+        <p>Line 4</p>
+    </div>
+    <div class="column" style="display: block; float: left; width: 200px;">
+        <p>Line 1</p>
+        <p>Line 2</p>
+        <p>Line 3</p>
+        <p>Line 4</p>
+        <p>Line 5</p>
+    </div>
+    <div class="column" style="display: block; float: left; width: 200px;">
+        <p>Line 1</p>
+    </div>
+    <div class="column" style="display: block; float: left; width: 200px;">
+        <p>Line 1</p>
+        <p>Line 2</p>
+        <p>Line 3</p>
+    </div>
+</div>
