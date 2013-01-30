@@ -44,7 +44,7 @@ A simple EqualHeight setup for the above HTML would be:
 
 ```html
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="jquery.EqualHeight.js"></script>
+<script src="jquery.equalheight.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
     $(".row").equalHeight(".column");
@@ -59,7 +59,7 @@ If you're using Twitter Bootstrap, the idea is the same:
 ```html
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <!-- include Bootstrap javascript files here -->
-<script src="jquery.EqualHeight.js"></script>
+<script src="jquery.equalheight.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
     $(".row .row-fluid").equalHeight(".span1 .span2 .span3 .span4 .span5 .span6 .span7 .span8 .span9 .span10 .span11 .span12");
