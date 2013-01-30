@@ -4,7 +4,7 @@
 **EqualHeight.coffee** is a lightweight jQuery plugin that stretches floating columns to the same height. It is designed to be used in responsive web design, especially with grid system like Twitter Bootstrap.
 
 With EqualHeight applied, floating columns in the same row container are always stretched to the height of the tallest one.
-For better visual experience on mobile devices, EqualHeight does not apply to columns when they are stacked together on small displays.
+For better visual experience on mobile devices, EqualHeight does not apply when columns are stacked together on small displays.
 
 EqualHeight currently supports [Twitter Bootstrap](http://twitter.github.com/bootstrap). Supports for more responsive design grid systems to be added.
 
@@ -52,9 +52,9 @@ $(document).ready(function() {
 </script>
 ```
 
-### Using with Twitter Bootstrap
+### Using Twitter Bootstrap
 
-If you're using Twitter Bootstrap, the concept is the same:
+If you're using Twitter Bootstrap, the idea is the same:
 
 ```html
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -71,7 +71,7 @@ $(document).ready(function() {
 
 EqualHeight.coffee is written in [CoffeeScript](http://coffeescript.org/).
 
-If you're modifying EqualHeight.coffee, make sure to modify `jquery.equalheight.coffee`, not `jquery.equalheight.js`.
+If you're contributing to EqualHeight.coffee, make sure to modify `jquery.equalheight.coffee`, not `jquery.equalheight.js`.
 
 
 
