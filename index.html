@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>EqualHeight.coffee by jsliang</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>EqualHeight.coffee</h1>
+        <h2>EqualHeight.coffee is a jQuery plugin that stretches fluid columns to the same height. It is originally designed to be used in responsive web design.</h2>
+        <a href="https://github.com/jsliang/EqualHeight.coffee" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>EqualHeight.coffee</h1>
+
+<p><strong>EqualHeight.coffee</strong> is a jQuery plugin that stretches fluid columns to the same height. It is originally designed to be used in responsive web design.</p>
+
+<p>With EqualHeight applied, floating columns in the same row container are always stretched to the height of the tallest one.
+For better visual experience on mobile devices, EqualHeight does not apply when columns are stacked together on small displays.</p>
+
+<p>EqualHeight currently supports <a href="http://twitter.github.com/bootstrap">Twitter Bootstrap</a>. Supports for more responsive design grid systems to be added.</p>
+
+<h2>How to Use</h2>
+
+<p>To use EqualHeight, you have to specify a CSS3 selector for row containers, and a CSS3 selector for column containers <strong>inside those row containers</strong>. Say your HTML looks like this:</p>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span> <span class="na">style=</span><span class="s">"display: block; clear: both;"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"column"</span> <span class="na">style=</span><span class="s">"display: block; float: left; width: 200px;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 2<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 3<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 4<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"column"</span> <span class="na">style=</span><span class="s">"display: block; float: left; width: 200px;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 2<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 3<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 4<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 5<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"column"</span> <span class="na">style=</span><span class="s">"display: block; float: left; width: 200px;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"column"</span> <span class="na">style=</span><span class="s">"display: block; float: left; width: 200px;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 2<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 3<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<p>A simple EqualHeight setup for the above HTML would be:</p>
+
+<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.equalheight.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">equalHeight</span><span class="p">(</span><span class="s2">".column"</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<h3>Using Twitter Bootstrap</h3>
+
+<p>If you're using Twitter Bootstrap, the idea is the same:</p>
+
+<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="c">&lt;!-- include Bootstrap javascript files here --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.equalheight.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">".row, .row-fluid"</span><span class="p">).</span><span class="nx">equalHeight</span><span class="p">(</span><span class="s2">".span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12"</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<h2>Any Comments?</h2>
+
+<p>If you have any comments, or you found any bugs to report, please post them in <a href="http://github.com/jsliang/EqualHeight.coffee/issues">Issues</a>.</p>
+
+<h2>Developing EqualHeight.coffee</h2>
+
+<p>EqualHeight.coffee is written in <a href="http://coffeescript.org/">CoffeeScript</a>.</p>
+
+<p>If you're contributing to EqualHeight.coffee, make sure to modify <code>jquery.equalheight.coffee</code>, not <code>jquery.equalheight.js</code>.</p>
+
+<h2>License</h2>
+
+<p>Copyright (c) 2013, Jui-Shan Liang &lt;<a href="mailto:jenny@jsliang.com">jenny@jsliang.com</a>&gt;</p>
+
+<p>All rights reserved.</p>
+
+<p>Licensed under GPL v2.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/jsliang/EqualHeight.coffee/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/jsliang/EqualHeight.coffee/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/jsliang/EqualHeight.coffee"></a> is maintained by <a href="https://github.com/jsliang">jsliang</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
