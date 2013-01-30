@@ -15,29 +15,29 @@ $.fn.extend
     equalHeight: (column_selector) ->
 
         return this.each ()->
-            children = $(this).children(column_selector)
+            columns = $(this).children(column_selector)
 
             equalizer = () ->
                 # reset column height to default
-                children.each () ->
+                columns.each () ->
                     $(this).height("")
 
                 # stop if not all columns have the same top values
-                first_top_value = children.first().position().top
+                first_top_value = columns.first().position().top
                 differentTop = false
-                children.each () ->
+                columns.each () ->
                     if not ( $(this).position().top is first_top_value )
                         differentTop = true
                 if differentTop then return
 
-                # get max height
+                # get max height of columns
                 max_col_height = 0
-                children.each () ->
+                columns.each () ->
                     if $(this).height() > max_col_height
                         max_col_height = $(this).height()
 
                 # set all columns to max_col_height
-                children.each () ->
+                columns.each () ->
                     $(this).height(max_col_height)
 
             # call first time

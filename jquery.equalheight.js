@@ -18,16 +18,16 @@ Licensed under GPL v2.
   $.fn.extend({
     equalHeight: function(column_selector) {
       return this.each(function() {
-        var children, equalizer;
-        children = $(this).children(column_selector);
+        var columns, equalizer;
+        columns = $(this).children(column_selector);
         equalizer = function() {
           var differentTop, first_top_value, max_col_height;
-          children.each(function() {
+          columns.each(function() {
             return $(this).height("");
           });
-          first_top_value = children.first().position().top;
+          first_top_value = columns.first().position().top;
           differentTop = false;
-          children.each(function() {
+          columns.each(function() {
             if (!($(this).position().top === first_top_value)) {
               return differentTop = true;
             }
@@ -36,12 +36,12 @@ Licensed under GPL v2.
             return;
           }
           max_col_height = 0;
-          children.each(function() {
+          columns.each(function() {
             if ($(this).height() > max_col_height) {
               return max_col_height = $(this).height();
             }
           });
-          return children.each(function() {
+          return columns.each(function() {
             return $(this).height(max_col_height);
           });
         };
