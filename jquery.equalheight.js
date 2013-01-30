@@ -22,9 +22,7 @@ Licensed under GPL v2.
         columns = $(this).children(column_selector);
         equalizer = function() {
           var differentTop, first_top_value, max_col_height;
-          columns.each(function() {
-            return $(this).height("");
-          });
+          columns.height("");
           first_top_value = columns.first().position().top;
           differentTop = false;
           columns.each(function() {
@@ -41,9 +39,7 @@ Licensed under GPL v2.
               return max_col_height = $(this).height();
             }
           });
-          return columns.each(function() {
-            return $(this).height(max_col_height);
-          });
+          return columns.height(max_col_height);
         };
         equalizer();
         $(window).load(equalizer);

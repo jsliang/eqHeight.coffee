@@ -23,8 +23,7 @@ $.fn.extend
 
             equalizer = () ->
                 # Reset column height to default
-                columns.each () ->
-                    $(this).height("")
+                columns.height("")
 
                 # Stop if not all columns have the same top values
                 first_top_value = columns.first().position().top
@@ -41,8 +40,7 @@ $.fn.extend
                         max_col_height = $(this).height()
 
                 # Set all columns to max_col_height
-                columns.each () ->
-                    $(this).height(max_col_height)
+                columns.height(max_col_height)
 
             #
             # Call equalizer()
