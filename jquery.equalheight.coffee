@@ -1,5 +1,5 @@
 ###
-HeightEqualizer.coffee v1.0.1
+EqualHeight.coffee v1.0.1
 http://github.com/jsliang/EqualHeight.coffee
 
 Copyright (c) 2013, Jui-Shan Liang <jenny@jsliang.com>
