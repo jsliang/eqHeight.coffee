@@ -13,7 +13,10 @@ EqualHeight currently supports [Twitter Bootstrap] and [Responsive GS]. Supports
 
 ## How to Use
 
-To use EqualHeight, you have to specify a CSS3 selector for row containers, and optionally a CSS3 selector for columns **inside those row containers** (by default EqualHeight selects the top level children of row containers as columns). Say your HTML looks like this:
+To use EqualHeight, you have to specify a CSS3 selector for row containers, and *optionally* a CSS3 selector for columns **inside those row containers**.
+EqualHeight selects the top level children of row containers as columns by default.
+
+Say your HTML looks like this:
 
 ```html
 <div class="row" style="display: block; clear: both;">
