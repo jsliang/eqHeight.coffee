@@ -57,7 +57,7 @@ $(document).ready(function() {
 ```
 
 You can also use
-```
+```javascript
 $(".row").equalHeight();
 ```
 in this case.
