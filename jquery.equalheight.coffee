@@ -1,5 +1,5 @@
 ###
-EqualHeight.coffee v1.0.1
+EqualHeight.coffee v1.0.2
 http://github.com/jsliang/EqualHeight.coffee
 
 Copyright (c) 2013, Jui-Shan Liang <jenny@jsliang.com>
@@ -17,6 +17,9 @@ $.fn.extend
         return this.each ()->
             columns = $(this).children(column_selector)
 
+            # Stop if there is no column selected
+            if columns.length is 0 then return
+
             #
             # equalizer: a function that equalizes column heights
             #
@@ -29,7 +32,7 @@ $.fn.extend
                 first_top_value = columns.first().position().top
                 differentTop = false
                 columns.each () ->
-                    if not ( $(this).position().top is first_top_value )
+                    if $(this).position().top isnt first_top_value
                         differentTop = true
                 if differentTop then return
 
