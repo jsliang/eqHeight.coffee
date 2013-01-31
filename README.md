@@ -7,8 +7,8 @@ For better visual experience on mobile devices, eqHeight does not apply when col
 
 eqHeight currently supports [Twitter Bootstrap] and [Responsive GS]. Supports for more responsive design grid systems to be added.
 
-[Twitter Bootstrap]: http://twitter.github.com/bootstrap
-[Responsive GS]: http://responsive.gs/
+[Twitter Bootstrap]:  http://twitter.github.com/bootstrap
+[Responsive GS]:      http://responsive.gs/
 
 Find us on our [Github Repository] & [Github Pages].
 
@@ -18,11 +18,20 @@ Find us on our [Github Repository] & [Github Pages].
 
 ## How to Use
 
-### Download
+### Download eqHeight
 
 Download `jquery.eqheight.js` from [Github](http://github.com/jsliang/eqHeight.coffee).
 
-### Put it in your code
+### Put it in your page
+
+Please note that you have to include eqHeight after jQuery.
+
+```html
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="jquery.eqheight.js"></script>
+```
+
+### Use it in your page
 
 Using eqHeight is simple.
 You have to specify a CSS3 selector for row containers, and *optionally* a CSS3 selector for columns **inside those row containers**.
@@ -59,8 +68,6 @@ Say your HTML looks like this:
 A simple eqHeight setup for the above HTML would be:
 
 ```html
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="jquery.eqheight.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
     $(".row").eqHeight(".column");
@@ -82,8 +89,7 @@ We'll demonstrate some of them here.
 If you're using [Twitter Bootstrap], the idea is the same:
 
 ```html
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<!-- include Bootstrap javascript files here -->
+<!-- include Bootstrap javascript files first -->
 <div class="row">
     <div class="span3">
         <p>Line 1</p>
@@ -102,7 +108,6 @@ If you're using [Twitter Bootstrap], the idea is the same:
         <p>Line 1</p>
     </div>
 </div>
-<script src="jquery.eqheight.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
     $(".row, .row-fluid").eqHeight(".span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12");
@@ -135,7 +140,6 @@ A sample for using [Responsive GS] with eqHeight.coffee:
       <p>3-1</p>
   </div>
 </div>
-<script src="jquery.eqheight.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
     $(".row").eqHeight(".col");
