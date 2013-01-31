@@ -1,47 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>eqHeight.coffee by jsliang</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
     <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+    <title>eqHeight.coffee by jsliang</title>
   </head>
+
   <body>
-
-      <header>
+    <header>
+      <div class="inner">
         <h1>eqHeight.coffee</h1>
-        <p>eqHeight.coffee is a jQuery plugin that stretches fluid columns to the same height. It is originally designed to be used in responsive web design.</p>
-      </header>
+        <h2>eqHeight.coffee is a jQuery plugin that stretches fluid columns to the same height. It is originally designed to be used in responsive web design.</h2>
+        <a href="https://github.com/jsliang/eqHeight.coffee" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
 
-      <div id="banner">
-        <span id="logo"></span>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>eqHeight.coffee</h1>
 
-        <a href="https://github.com/jsliang/EqualHeight.coffee" class="button fork"><strong>View On GitHub</strong></a>
-        <div class="downloads">
-          <span>Downloads:</span>
-          <ul>
-            <li><a href="https://github.com/jsliang/EqualHeight.coffee/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/jsliang/EqualHeight.coffee/tarball/master" class="button">TAR</a></li>
-          </ul>
-        </div>
-      </div><!-- end banner -->
-
-    <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
-      <section>
-        <h1>eqHeight.coffee</h1>
-
-<p><strong>eqHeight.coffee</strong> is a jQuery plugin that stretches fluid columns to the same height. It is originally designed to be used in responsive web design.</p>
+<p><strong>eqHeight.coffee</strong> is a jQuery plugin that stretches fluid columns to equal height. It is originally designed to be used in responsive web design.</p>
 
 <p>With eqHeight applied, floating columns in the same row container are always stretched to the height of the tallest one.
 For better visual experience on mobile devices, eqHeight does not apply when columns are stacked together on small displays.</p>
@@ -52,11 +41,21 @@ For better visual experience on mobile devices, eqHeight does not apply when col
 
 <h2>How to Use</h2>
 
-<h3>Download</h3>
+<h3>Download eqHeight</h3>
 
 <p>Download <code>jquery.eqheight.js</code> from <a href="http://github.com/jsliang/eqHeight.coffee">Github</a>.</p>
 
-<h3>Put it in your code</h3>
+<h3>Put eqHeight in your page</h3>
+
+<p>Please note that you have to include eqHeight after jQuery.</p>
+
+<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- put eqHeight after jQuery --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.eqheight.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<h3>Use eqHeight in your page</h3>
 
 <p>Using eqHeight is simple.
 You have to specify a CSS3 selector for row containers, and <em>optionally</em> a CSS3 selector for columns <strong>inside those row containers</strong>.
@@ -91,9 +90,7 @@ eqHeight selects the top level children of row containers as columns by default.
 
 <p>A simple eqHeight setup for the above HTML would be:</p>
 
-<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.eqheight.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">(</span><span class="s2">".column"</span><span class="p">);</span>
 <span class="p">});</span>
@@ -114,8 +111,7 @@ We'll demonstrate some of them here.</p>
 
 <p>If you're using <a href="http://twitter.github.com/bootstrap">Twitter Bootstrap</a>, the idea is the same:</p>
 
-<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="c">&lt;!-- include Bootstrap javascript files here --&gt;</span>
+<div class="highlight"><pre><span class="c">&lt;!-- include Bootstrap javascript files first --&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"span3"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
@@ -134,7 +130,6 @@ We'll demonstrate some of them here.</p>
         <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.eqheight.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s2">".row, .row-fluid"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">(</span><span class="s2">".span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12"</span><span class="p">);</span>
@@ -166,7 +161,6 @@ We'll demonstrate some of them here.</p>
       <span class="nt">&lt;p&gt;</span>3-1<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.eqheight.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">(</span><span class="s2">".col"</span><span class="p">);</span>
@@ -191,13 +185,35 @@ We'll demonstrate some of them here.</p>
 <p>All rights reserved.</p>
 
 <p>Licensed under GPL v2.</p>
-      </section>
-      <footer>
-        <p>Project maintained by <a href="https://github.com/jsliang">jsliang</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
-      </footer>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/jsliang/eqHeight.coffee/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/jsliang/eqHeight.coffee/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/jsliang/eqHeight.coffee"></a> is maintained by <a href="https://github.com/jsliang">jsliang</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-37740364-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>
