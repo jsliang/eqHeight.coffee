@@ -4,7 +4,6 @@
     "description": "eqHeight.coffee is a jQuery plugin that stretches fluid columns to equal height.",
     "keywords": [
         "responsive",
-        "web design",
         "column", "columns",
         "same", "equal",
         "height", "heights"
