@@ -1,39 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
     <title>eqHeight.coffee by jsliang</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
   </head>
-
   <body>
-    <header>
-      <div class="inner">
-        <h1>eqHeight.coffee</h1>
-        <h2>eqHeight.coffee is a jQuery plugin that stretches fluid columns to the same height. It is originally designed to be used in responsive web design.</h2>
-        <a href="https://github.com/jsliang/eqHeight.coffee" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>eqHeight.coffee</h1>
+      <header>
+        <h1>eqHeight.coffee</h1>
+        <p>eqHeight.coffee is a jQuery plugin that stretches fluid columns to the same height. It is originally designed to be used in responsive web design.</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/jsliang/eqHeight.coffee" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/jsliang/eqHeight.coffee/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/jsliang/eqHeight.coffee/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>eqHeight.coffee</h1>
 
 <p><strong>eqHeight.coffee</strong> is a jQuery plugin that stretches fluid columns to equal height. It is originally designed to be used in responsive web design.</p>
 
 <p>With eqHeight applied, floating columns in the same row container are always stretched to the height of the tallest one.
-For better visual experience on mobile devices, eqHeight does not apply when columns are stacked together on small displays.</p>
+For better visual experience on mobile devices, eqHeight adjusts column heights as window resizes.
+Furthurmore, eqHeight resets columns to their default height values when columns are stacked together on small displays.</p>
 
 <p>eqHeight currently supports <a href="http://twitter.github.com/bootstrap">Twitter Bootstrap</a> and <a href="http://responsive.gs/">Responsive GS</a>. Supports for more responsive design grid systems to be added.</p>
 
@@ -97,14 +109,14 @@ eqHeight selects the top level children of row containers as columns by default.
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
 
-<p>You can use</p>
+<p>You can also use</p>
 
 <div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">();</span>
 </pre></div>
 
 <p>in this case because &lt;div class="column"&gt; elements are top level children of &lt;div class="row"&gt; elements.</p>
 
-<p>You can also use it with existing responsive grid systems that have similar structure.
+<p>You can use eqHeight with existing responsive grid systems that have similar structures.
 We'll demonstrate some of them here.</p>
 
 <h4>Using Twitter Bootstrap</h4>
@@ -185,26 +197,14 @@ We'll demonstrate some of them here.</p>
 <p>All rights reserved.</p>
 
 <p>Licensed under GPL v2.</p>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/jsliang/eqHeight.coffee/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/jsliang/eqHeight.coffee/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/jsliang/eqHeight.coffee"></a> is maintained by <a href="https://github.com/jsliang">jsliang</a>.</p>
-
-          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/jsliang">jsliang</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
     </div>
-
-            <script type="text/javascript">
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
