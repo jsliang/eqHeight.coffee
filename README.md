@@ -78,13 +78,13 @@ $(document).ready(function() {
 </script>
 ```
 
-You can use
+You can also use
 ```javascript
 $(".row").eqHeight();
 ```
 in this case because &lt;div class="column"&gt; elements are top level children of &lt;div class="row"&gt; elements.
 
-You can also use it with existing responsive grid systems that have similar structure.
+You can use eqHeight with existing responsive grid systems that have similar structures.
 We'll demonstrate some of them here.
 
 #### Using Twitter Bootstrap
