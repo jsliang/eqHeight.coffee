@@ -22,16 +22,18 @@ Find us on our [Github Repository] & [Github Pages].
 
 Download `jquery.eqheight.js` from [Github](http://github.com/jsliang/eqHeight.coffee).
 
-### Put it in your page
+### Put eqHeight in your page
 
 Please note that you have to include eqHeight after jQuery.
 
 ```html
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<!-- put eqHeight after jQuery -->
 <script src="jquery.eqheight.js"></script>
 ```
 
-### Use it in your page
+### Use eqHeight in your page
 
 Using eqHeight is simple.
 You have to specify a CSS3 selector for row containers, and *optionally* a CSS3 selector for columns **inside those row containers**.
