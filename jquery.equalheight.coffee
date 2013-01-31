@@ -1,6 +1,6 @@
 ###
-EqualHeight.coffee v1.0.2
-http://github.com/jsliang/EqualHeight.coffee
+eqHeight.coffee v1.1.2
+http://github.com/jsliang/eqHeight.coffee
 
 Copyright (c) 2013, Jui-Shan Liang <jenny@jsliang.com>
 All rights reserved.
@@ -12,7 +12,7 @@ $ = jQuery
 
 # Adds plugin object to jQuery
 $.fn.extend
-    equalHeight: (column_selector) ->
+    eqHeight: (column_selector) ->
 
         return this.each ()->
             columns = $(this).children(column_selector)
