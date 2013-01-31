@@ -10,10 +10,22 @@ eqHeight currently supports [Twitter Bootstrap] and [Responsive GS]. Supports fo
 [Twitter Bootstrap]: http://twitter.github.com/bootstrap
 [Responsive GS]: http://responsive.gs/
 
+Find us on our [Github Repository] & [Github Pages].
+
+[Github Repository]:  http://github.com/jsliang/eqHeight.coffee
+[Github Pages]:       http://jsliang.github.com/eqHeight.coffee
+
 
 ## How to Use
 
-To use eqHeight, you have to specify a CSS3 selector for row containers, and *optionally* a CSS3 selector for columns **inside those row containers**.
+### Download
+
+Download `jquery.eqheight.js` from [Github](http://github.com/jsliang/eqHeight.coffee).
+
+### Put it in your code
+
+Using eqHeight is simple.
+You have to specify a CSS3 selector for row containers, and *optionally* a CSS3 selector for columns **inside those row containers**.
 eqHeight selects the top level children of row containers as columns by default.
 
 Say your HTML looks like this:
@@ -56,13 +68,16 @@ $(document).ready(function() {
 </script>
 ```
 
-You can also use
+You can use
 ```javascript
 $(".row").eqHeight();
 ```
-in this case.
+in this case because &lt;div class="column"&gt; elements are top level children of &lt;div class="row"&gt; elements.
 
-### Using Twitter Bootstrap
+You can also use it with existing responsive grid systems that have similar structure.
+We'll demonstrate some of them here.
+
+#### Using Twitter Bootstrap
 
 If you're using [Twitter Bootstrap], the idea is the same:
 
@@ -95,7 +110,7 @@ $(document).ready(function() {
 </script>
 ```
 
-### Using Responsive GS
+#### Using Responsive GS
 
 A sample for using [Responsive GS] with eqHeight.coffee:
 
