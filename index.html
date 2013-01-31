@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>EqualHeight.coffee by jsliang</title>
+    <title>eqHeight.coffee by jsliang</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -17,8 +17,8 @@
   <body>
 
       <header>
-        <h1>EqualHeight.coffee</h1>
-        <p>EqualHeight.coffee is a jQuery plugin that stretches fluid columns to the same height. It is originally designed to be used in responsive web design.</p>
+        <h1>eqHeight.coffee</h1>
+        <p>eqHeight.coffee is a jQuery plugin that stretches fluid columns to the same height. It is originally designed to be used in responsive web design.</p>
       </header>
 
       <div id="banner">
@@ -39,19 +39,28 @@
         <ul></ul>
       </nav>
       <section>
-        <h1>EqualHeight.coffee</h1>
+        <h1>eqHeight.coffee</h1>
 
-<p><strong>EqualHeight.coffee</strong> is a jQuery plugin that stretches fluid columns to the same height. It is originally designed to be used in responsive web design.</p>
+<p><strong>eqHeight.coffee</strong> is a jQuery plugin that stretches fluid columns to the same height. It is originally designed to be used in responsive web design.</p>
 
-<p>With EqualHeight applied, floating columns in the same row container are always stretched to the height of the tallest one.
-For better visual experience on mobile devices, EqualHeight does not apply when columns are stacked together on small displays.</p>
+<p>With eqHeight applied, floating columns in the same row container are always stretched to the height of the tallest one.
+For better visual experience on mobile devices, eqHeight does not apply when columns are stacked together on small displays.</p>
 
-<p>EqualHeight currently supports <a href="http://twitter.github.com/bootstrap">Twitter Bootstrap</a> and <a href="http://responsive.gs/">Responsive GS</a>. Supports for more responsive design grid systems to be added.</p>
+<p>eqHeight currently supports <a href="http://twitter.github.com/bootstrap">Twitter Bootstrap</a> and <a href="http://responsive.gs/">Responsive GS</a>. Supports for more responsive design grid systems to be added.</p>
+
+<p>Find us on our <a href="http://github.com/jsliang/eqHeight.coffee">Github Repository</a> &amp; <a href="http://jsliang.github.com/eqHeight.coffee">Github Pages</a>.</p>
 
 <h2>How to Use</h2>
 
-<p>To use EqualHeight, you have to specify a CSS3 selector for row containers, and <em>optionally</em> a CSS3 selector for columns <strong>inside those row containers</strong>.
-EqualHeight selects the top level children of row containers as columns by default.</p>
+<h3>Download</h3>
+
+<p>Download <code>jquery.eqheight.js</code> from <a href="http://github.com/jsliang/eqHeight.coffee">Github</a>.</p>
+
+<h3>Put it in your code</h3>
+
+<p>Using eqHeight is simple.
+You have to specify a CSS3 selector for row containers, and <em>optionally</em> a CSS3 selector for columns <strong>inside those row containers</strong>.
+eqHeight selects the top level children of row containers as columns by default.</p>
 
 <p>Say your HTML looks like this:</p>
 
@@ -80,25 +89,28 @@ EqualHeight selects the top level children of row containers as columns by defau
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
 
-<p>A simple EqualHeight setup for the above HTML would be:</p>
+<p>A simple eqHeight setup for the above HTML would be:</p>
 
 <div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.equalheight.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.eqheight.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">equalHeight</span><span class="p">(</span><span class="s2">".column"</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">(</span><span class="s2">".column"</span><span class="p">);</span>
 <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
 
-<p>You can also use</p>
+<p>You can use</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">equalHeight</span><span class="p">();</span>
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">();</span>
 </pre></div>
 
-<p>in this case.</p>
+<p>in this case because &lt;div class="column"&gt; elements are top level children of &lt;div class="row"&gt; elements.</p>
 
-<h3>Using Twitter Bootstrap</h3>
+<p>You can also use it with existing responsive grid systems that have similar structure.
+We'll demonstrate some of them here.</p>
+
+<h4>Using Twitter Bootstrap</h4>
 
 <p>If you're using <a href="http://twitter.github.com/bootstrap">Twitter Bootstrap</a>, the idea is the same:</p>
 
@@ -122,17 +134,17 @@ EqualHeight selects the top level children of row containers as columns by defau
         <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.equalheight.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.eqheight.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s2">".row, .row-fluid"</span><span class="p">).</span><span class="nx">equalHeight</span><span class="p">(</span><span class="s2">".span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12"</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">".row, .row-fluid"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">(</span><span class="s2">".span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12"</span><span class="p">);</span>
 <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
 
-<h3>Using Responsive GS</h3>
+<h4>Using Responsive GS</h4>
 
-<p>A sample for using <a href="http://responsive.gs/">Responsive GS</a> with EqualHeight.coffee:</p>
+<p>A sample for using <a href="http://responsive.gs/">Responsive GS</a> with eqHeight.coffee:</p>
 
 <div class="highlight"><pre><span class="c">&lt;!-- include Responsive GS files here --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
@@ -154,23 +166,23 @@ EqualHeight selects the top level children of row containers as columns by defau
       <span class="nt">&lt;p&gt;</span>3-1<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.equalheight.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.eqheight.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">equalHeight</span><span class="p">(</span><span class="s2">".col"</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">(</span><span class="s2">".col"</span><span class="p">);</span>
 <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
 
 <h2>Any Comments?</h2>
 
-<p>If you have any comments, or you found any bugs to report, please post them in <a href="http://github.com/jsliang/EqualHeight.coffee/issues">Issues</a>.</p>
+<p>If you have any comments, or you found any bugs to report, please post them in <a href="http://github.com/jsliang/eqHeight.coffee/issues">Issues</a>.</p>
 
-<h2>Developing EqualHeight.coffee</h2>
+<h2>Developing eqHeight.coffee</h2>
 
-<p>EqualHeight.coffee is written in <a href="http://coffeescript.org/">CoffeeScript</a>.</p>
+<p>eqHeight.coffee is written in <a href="http://coffeescript.org/">CoffeeScript</a>.</p>
 
-<p>If you're contributing to EqualHeight.coffee, make sure to modify <code>jquery.equalheight.coffee</code>, not <code>jquery.equalheight.js</code>.</p>
+<p>If you're contributing to eqHeight.coffee, make sure to modify <code>jquery.eqheight.coffee</code>, not <code>jquery.eqheight.js</code>.</p>
 
 <h2>License</h2>
 
