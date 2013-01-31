@@ -3,7 +3,8 @@
 **eqHeight.coffee** is a jQuery plugin that stretches fluid columns to equal height. It is originally designed to be used in responsive web design.
 
 With eqHeight applied, floating columns in the same row container are always stretched to the height of the tallest one.
-For better visual experience on mobile devices, eqHeight does not apply when columns are stacked together on small displays.
+For better visual experience on mobile devices, eqHeight adjusts column heights as window resizes.
+Furthurmore, eqHeight resets columns to their default height values when columns are stacked together on small displays.
 
 eqHeight currently supports [Twitter Bootstrap] and [Responsive GS]. Supports for more responsive design grid systems to be added.
 
