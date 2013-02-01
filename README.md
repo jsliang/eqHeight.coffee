@@ -1,6 +1,7 @@
 # eqHeight.coffee
 
 **eqHeight.coffee** is a jQuery plugin that stretches fluid columns to equal height. It is originally designed to be used in responsive web design.
+A [live demo](http://jsliang.github.com/eqHeight.coffee/demo.html) is available.
 
 With eqHeight applied, floating columns in the same row container are always stretched to the height of the tallest one.
 For better visual experience on mobile devices, eqHeight adjusts column heights as window resizes.

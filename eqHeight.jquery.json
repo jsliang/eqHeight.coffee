@@ -29,6 +29,7 @@
     ],
     "bugs": "http://github.com/jsliang/eqHeight.coffee/issues",
     "homepage": "http://jsliang.github.com/eqHeight.coffee",
+    "demo": "http://jsliang.github.com/eqHeight.coffee/demo.html",
     "dependencies": {
         "jquery": ">=1.8.3"
     }
