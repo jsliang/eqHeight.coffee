@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <title>eqHeight.coffee by jsliang</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="jquery.eqheight.js"></script>
+        <!--[if lt IE 9]>
+          <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <style type="text/css">
+        h2
+        {
+            display: block;
+            clear: both;
+        }
+
+        .row
+        {
+            background-color: rgba(255, 255, 120, 0.5);
+        }
+
+        .column
+        {
+            background-color: rgba(255, 255, 60, 0.5);
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .clearfix:after {
+            content: ".";
+            display: block;
+            clear: both;
+            visibility: hidden;
+            line-height: 0;
+            height: 0;
+        }
+         
+        .clearfix {
+            display: inline-block;
+        }
+        </style>
+    </head>
+    <body>
+
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $(".row.eqheight").eqHeight(".column");
+        });
+        </script>
+
+        <h1>eqHeight.coffee</h1>
+
+        <h2>Before:</h2>
+        <div class="row clearfix">
+            <div class="column" style="display: block; float: left; width: 200px;">
+                <p>Line 1</p>
+                <p>Line 2</p>
+                <p>Line 3</p>
+                <p>Line 4</p>
+            </div>
+            <div class="column" style="display: block; float: left; width: 200px;">
+                <p>Line 1</p>
+                <p>Line 2</p>
+                <p>Line 3</p>
+                <p>Line 4</p>
+                <p>Line 5</p>
+            </div>
+            <div class="column" style="display: block; float: left; width: 200px;">
+                <p>Line 1</p>
+            </div>
+            <div class="column" style="display: block; float: left; width: 200px;">
+                <p>Line 1</p>
+                <p>Line 2</p>
+                <p>Line 3</p>
+            </div>
+        </div>
+
+        <h2>After:</h2>
+        <div class="row clearfix eqheight">
+            <div class="column" style="display: block; float: left; width: 200px;">
+                <p>Line 1</p>
+                <p>Line 2</p>
+                <p>Line 3</p>
+                <p>Line 4</p>
+            </div>
+            <div class="column" style="display: block; float: left; width: 200px;">
+                <p>Line 1</p>
+                <p>Line 2</p>
+                <p>Line 3</p>
+                <p>Line 4</p>
+                <p>Line 5</p>
+            </div>
+            <div class="column" style="display: block; float: left; width: 200px;">
+                <p>Line 1</p>
+            </div>
+            <div class="column" style="display: block; float: left; width: 200px;">
+                <p>Line 1</p>
+                <p>Line 2</p>
+                <p>Line 3</p>
+            </div>
+        </div>
+    </body>
+</html>
