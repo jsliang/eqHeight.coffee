@@ -1,105 +1,195 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <title>eqHeight.coffee by jsliang</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script src="jquery.eqheight.js"></script>
-        <!--[if lt IE 9]>
-          <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        <style type="text/css">
-        h2
-        {
-            display: block;
-            clear: both;
-        }
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>eqHeight.coffee by jsliang</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-        .row
-        {
-            background-color: rgba(255, 255, 120, 0.5);
-        }
+    <style type="text/css">
+    h2
+    {
+        display: block;
+        clear: both;
+    }
 
-        .column
-        {
-            background-color: rgba(255, 255, 60, 0.5);
-            margin: 5px;
-            padding: 5px;
-        }
+    .row
+    {
+        background-color: rgb(255, 255, 180);
+        margin-bottom: 2em;
+    }
 
-        .clearfix:after {
-            content: ".";
-            display: block;
-            clear: both;
-            visibility: hidden;
-            line-height: 0;
-            height: 0;
-        }
-         
-        .clearfix {
-            display: inline-block;
-        }
-        </style>
-    </head>
-    <body>
+    .column
+    {
+        background-color: rgb(255, 255, 128);
+        margin: 6px;
+        padding: 5px;
+        display: block;
+        float: left;
+        width: 125px;
+    }
 
-        <script type="text/javascript">
-        $(document).ready(function() {
-            $(".row.eqheight").eqHeight(".column");
-        });
-        </script>
+    .clearfix:after {
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+    }
+     
+    .clearfix {
+        display: inline-block;
+    }
+    </style>
 
-        <h1>eqHeight.coffee</h1>
+    <script src="jquery.eqheight.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        //$(".row.eqheight").eqHeight(".column");
+        $(".row.eqheight").eqHeight();
+    });
+    </script>
 
-        <h2>Before:</h2>
+  </head>
+  <body>
+
+      <header>
+        <h1>DEMO: eqHeight.coffee</h1>
+        <p>eqHeight.coffee is a jQuery plugin that stretches fluid columns to the same height. It is originally designed to be used in responsive web design.</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="http://jsliang.github.com/eqHeight.coffee" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/jsliang/eqHeight.coffee/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/jsliang/eqHeight.coffee/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>DEMO: eqHeight.coffee</h1>
+
+        <h2>Markup</h2>
+        eqHeight.coffee works on a row container element with a group of similar column items.
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"column"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 2<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 3<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 4<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"column"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 2<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 3<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 4<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 5<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"column"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"column"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 2<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 3<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+        <h2>Before eqHeight.coffee</h2>
+        Columns align to contents and thus their heights are inequal.
         <div class="row clearfix">
-            <div class="column" style="display: block; float: left; width: 200px;">
+            <div class="column">
                 <p>Line 1</p>
                 <p>Line 2</p>
                 <p>Line 3</p>
                 <p>Line 4</p>
             </div>
-            <div class="column" style="display: block; float: left; width: 200px;">
+            <div class="column">
                 <p>Line 1</p>
                 <p>Line 2</p>
                 <p>Line 3</p>
                 <p>Line 4</p>
                 <p>Line 5</p>
             </div>
-            <div class="column" style="display: block; float: left; width: 200px;">
+            <div class="column">
                 <p>Line 1</p>
             </div>
-            <div class="column" style="display: block; float: left; width: 200px;">
+            <div class="column">
                 <p>Line 1</p>
                 <p>Line 2</p>
                 <p>Line 3</p>
             </div>
         </div>
 
-        <h2>After:</h2>
+        <h2>After eqHeight.coffee</h2>
+        Columns are streched to equal heights. You can try resizing the window, and you'll find column heights being reset when columns got stacked up on smaller display.
+<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.eqheight.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">(</span><span class="s2">".column"</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
         <div class="row clearfix eqheight">
-            <div class="column" style="display: block; float: left; width: 200px;">
+            <div class="column">
                 <p>Line 1</p>
                 <p>Line 2</p>
                 <p>Line 3</p>
                 <p>Line 4</p>
             </div>
-            <div class="column" style="display: block; float: left; width: 200px;">
+            <div class="column">
                 <p>Line 1</p>
                 <p>Line 2</p>
                 <p>Line 3</p>
                 <p>Line 4</p>
                 <p>Line 5</p>
             </div>
-            <div class="column" style="display: block; float: left; width: 200px;">
+            <div class="column">
                 <p>Line 1</p>
             </div>
-            <div class="column" style="display: block; float: left; width: 200px;">
+            <div class="column">
                 <p>Line 1</p>
                 <p>Line 2</p>
                 <p>Line 3</p>
             </div>
         </div>
-    </body>
+
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/jsliang">jsliang</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-37740364-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
 </html>
