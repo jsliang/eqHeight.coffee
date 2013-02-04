@@ -17,25 +17,32 @@
           return;
         }
         equalizer = function() {
-          var differentTop, first_top_value, max_col_height;
+          var first_top_value, max_col_height, row_columns, row_id, row_index, _results;
           columns.height("");
           first_top_value = columns.first().position().top;
-          differentTop = false;
+          row_id = 1;
           columns.each(function() {
-            if ($(this).position().top !== first_top_value) {
-              return differentTop = true;
+            var current_top;
+            current_top = $(this).position().top;
+            if (current_top !== first_top_value) {
+              row_id += 1;
+              first_top_value = current_top;
             }
+            return $(this).addClass("eqHeight_row_" + row_id);
           });
-          if (differentTop) {
-            return;
+          _results = [];
+          for (row_index = 1; 1 <= row_id ? row_index <= row_id : row_index >= row_id; 1 <= row_id ? row_index++ : row_index--) {
+            row_columns = $(".eqHeight_row_" + row_index);
+            max_col_height = 0;
+            row_columns.each(function() {
+              if ($(this).height() > max_col_height) {
+                return max_col_height = $(this).height();
+              }
+            });
+            row_columns.height(max_col_height);
+            _results.push(row_columns.removeClass("eqHeight_row_" + row_index));
           }
-          max_col_height = 0;
-          columns.each(function() {
-            if ($(this).height() > max_col_height) {
-              return max_col_height = $(this).height();
-            }
-          });
-          return columns.height(max_col_height);
+          return _results;
         };
         equalizer();
         $(window).load(equalizer);

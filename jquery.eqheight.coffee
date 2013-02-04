@@ -13,8 +13,7 @@ $ = jQuery
 # Adds plugin object to jQuery
 $.fn.extend
     eqHeight: (column_selector) ->
-
-        return this.each ()->
+        this.each ()->
             columns = $(this).children(column_selector)
 
             # Stop if there is no column selected
@@ -28,22 +27,30 @@ $.fn.extend
                 # Reset column height to default
                 columns.height("")
 
-                # Stop if not all columns have the same top values
+                # Group columns by rows
                 first_top_value = columns.first().position().top
-                differentTop = false
+                row_id = 1
                 columns.each () ->
-                    if $(this).position().top isnt first_top_value
-                        differentTop = true
-                if differentTop then return
+                    current_top = $(this).position().top
+                    if current_top isnt first_top_value
+                        row_id += 1
+                        first_top_value = current_top
+                    $(this).addClass("eqHeight_row_#{row_id}")
 
-                # Get max height of columns
-                max_col_height = 0
-                columns.each () ->
-                    if $(this).height() > max_col_height
-                        max_col_height = $(this).height()
+                for row_index in [1..row_id]
+                    row_columns = $(".eqHeight_row_#{row_index}")
 
-                # Set all columns to max_col_height
-                columns.height(max_col_height)
+                    # Get max height of columns
+                    max_col_height = 0
+                    row_columns.each () ->
+                        if $(this).height() > max_col_height
+                            max_col_height = $(this).height()
+
+                    # Set all columns to max_col_height
+                    row_columns.height(max_col_height)
+
+                    # Reset row info
+                    row_columns.removeClass("eqHeight_row_#{row_index}")
 
             #
             # Call equalizer()
