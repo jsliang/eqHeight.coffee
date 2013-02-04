@@ -1,6 +1,6 @@
 (function() {
   /*
-  eqHeight.coffee v1.1.5
+  eqHeight.coffee v1.2.0
   http://jsliang.github.com/eqHeight.coffee
   
   Copyright (c) 2013, Jui-Shan Liang <jenny@jsliang.com>
