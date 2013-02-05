@@ -8,7 +8,7 @@
         "same", "equal",
         "height", "heights"
     ],
-    "version": "1.1.5",
+    "version": "1.2.1",
     "author": {
         "name": "Jenny, Jui-Shan Liang (梁睿珊)",
         "email": "jenny@jsliang.com",
@@ -24,7 +24,7 @@
     "licenses": [
         {
             "type": "GPLv2",
-            "url": "http://github.com/jsliang/eqHeight.coffee/blob/1.1.5/LICENSE"
+            "url": "http://github.com/jsliang/eqHeight.coffee/blob/1.2.1/LICENSE"
         }
     ],
     "bugs": "http://github.com/jsliang/eqHeight.coffee/issues",
