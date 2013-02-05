@@ -1,5 +1,5 @@
 ###
-eqHeight.coffee v1.1.5
+eqHeight.coffee v1.2.0
 http://jsliang.github.com/eqHeight.coffee
 
 Copyright (c) 2013, Jui-Shan Liang <jenny@jsliang.com>
@@ -20,44 +20,53 @@ $.fn.extend
             if columns.length is 0 then return
 
             #
+            # _equalize_marked_columns: a function that equalize
+            # height values of marked column elements
+            #
+            _equalize_marked_columns = () ->
+                marked_columns = $(".eqHeight_row")
+
+                # Get max height of marked_columns
+                max_col_height = 0
+                marked_columns.each () ->
+                    if $(this).height() > max_col_height
+                        max_col_height = $(this).height()
+
+                # Set all marked_columns to max_col_height
+                marked_columns.height(max_col_height)
+
+                # Unmark column
+                $(".eqHeight_row").removeClass("eqHeight_row")
+
+            #
             # equalizer: a function that equalizes column heights
             #
 
             equalizer = () ->
                 # Reset column height to default
-                columns.height("")
+                columns.height("auto")
 
                 # Group columns by rows
-                first_top_value = columns.first().position().top
-                row_id = 1
+                row_top_value = columns.first().position().top
                 columns.each () ->
                     current_top = $(this).position().top
-                    if current_top isnt first_top_value
-                        row_id += 1
-                        first_top_value = current_top
-                    $(this).addClass("eqHeight_row_#{row_id}")
 
-                for row_index in [1..row_id]
-                    row_columns = $(".eqHeight_row_#{row_index}")
+                    if current_top isnt row_top_value
+                        # Equalize heights of marked columns
+                        _equalize_marked_columns()
 
-                    # Get max height of columns
-                    max_col_height = 0
-                    row_columns.each () ->
-                        if $(this).height() > max_col_height
-                            max_col_height = $(this).height()
+                        # Update row_top_value
+                        row_top_value = $(this).position().top
 
-                    # Set all columns to max_col_height
-                    row_columns.height(max_col_height)
+                    # Mark the column element
+                    $(this).addClass("eqHeight_row")
 
-                    # Reset row info
-                    row_columns.removeClass("eqHeight_row_#{row_index}")
+                # Equalize heights of marked columns
+                _equalize_marked_columns()
 
             #
             # Call equalizer()
             #
-
-            # Equalize column heights for the first time
-            equalizer()
 
             # Equalize column heights after all contents on the page have been loaded
             $(window).load(equalizer)
