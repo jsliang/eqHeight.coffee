@@ -1,0 +1,75 @@
+###
+eqHeight.coffee v1.1.5
+http://jsliang.github.com/eqHeight.coffee
+
+Copyright (c) 2013, Jui-Shan Liang <jenny@jsliang.com>
+All rights reserved.
+Licensed under GPL v2.
+###
+
+# Reference jQuery
+$ = jQuery
+
+# Adds plugin object to jQuery
+$.fn.extend
+    eqHeight: (column_selector) ->
+        this.each ()->
+            columns = $(this).children(column_selector)
+
+            # Stop if there is no column selected
+            if columns.length is 0 then return
+
+            #
+            # _equalize_marked_columns: a function that equalize
+            # height values of marked column elements
+            #
+            _equalize_marked_columns = () ->
+                marked_columns = $(".eqHeight_row")
+
+                # Get max height of marked_columns
+                max_col_height = 0
+                marked_columns.each () ->
+                    if $(this).height() > max_col_height
+                        max_col_height = $(this).height()
+
+                # Set all marked_columns to max_col_height
+                marked_columns.height(max_col_height)
+
+                # Unmark column
+                $(".eqHeight_row").removeClass("eqHeight_row")
+
+            #
+            # equalizer: a function that equalizes column heights
+            #
+
+            equalizer = () ->
+                # Reset column height to default
+                columns.height("auto")
+
+                # Group columns by rows
+                row_top_value = columns.first().position().top
+                columns.each () ->
+                    current_top = $(this).position().top
+
+                    if current_top isnt row_top_value
+                        # Equalize heights of marked columns
+                        _equalize_marked_columns()
+
+                        # Update row_top_value
+                        row_top_value = $(this).position().top
+
+                    # Mark the column element
+                    $(this).addClass("eqHeight_row")
+
+                # Equalize heights of marked columns
+                _equalize_marked_columns()
+
+            #
+            # Call equalizer()
+            #
+
+            # Equalize column heights after all contents on the page have been loaded
+            $(window).load(equalizer)
+
+            # Equalize column heights on resize
+            $(window).resize(equalizer)
