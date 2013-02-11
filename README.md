@@ -29,7 +29,7 @@ Download `jquery.eqheight.js` from [Github](http://github.com/jsliang/eqHeight.c
 Please note that you have to include eqHeight after jQuery.
 
 ```html
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery.min.js"></script>
 
 <!-- put eqHeight after jQuery -->
 <script src="jquery.eqheight.js"></script>
@@ -125,7 +125,7 @@ A sample for using [Responsive GS] with eqHeight.coffee:
 
 ```html
 <!-- include Responsive GS files here -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery.min.js"></script>
 <div class="row">
   <div class="col span_3">
       <p>1-1</p>
