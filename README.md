@@ -88,7 +88,7 @@ in this case because &lt;div class="column"&gt; elements are top level children 
 You can use eqHeight with existing responsive grid systems that have similar structures.
 We'll demonstrate some of them here.
 
-#### Using Twitter Bootstrap
+#### Twitter Bootstrap
 
 If you're using [Twitter Bootstrap], the idea is the same:
 
@@ -119,7 +119,7 @@ $(document).ready(function() {
 </script>
 ```
 
-#### Using Responsive GS
+#### Responsive GS
 
 A sample for using [Responsive GS] with eqHeight.coffee:
 
@@ -150,6 +150,12 @@ $(document).ready(function() {
 });
 </script>
 ```
+
+#### Responsive-SASS-Grid
+
+A live demo using [carlopogus/Responsive-SASS-Grid](https://github.com/carlopogus/Responsive-SASS-Grid) with eqHeight.coffee can be found [here](http://jsliang.com/Responsive-SASS-Grid/).
+See [issue #2](https://github.com/jsliang/eqHeight.coffee/issues/2) for more details.
+
 
 ## Any Comments?
 
