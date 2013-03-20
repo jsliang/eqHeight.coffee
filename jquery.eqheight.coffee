@@ -66,8 +66,8 @@ $.fn.extend
                 # Equalize heights of marked columns
                 _equalize_marked_columns()
 
-            # Lets prevent a repaint proces on resizing and only resize if we
-            # are done resizing.
+            # Lets prevent a repaint proces on every resize event and only 
+            # equalize if we are done resizing.
             start_equalizing = () ->
                 clearTimeout(timer)
                 timer = setTimeout(equalizer, 100);
