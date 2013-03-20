@@ -15,13 +15,13 @@ $.fn.extend
     eqHeight: (column_selector) ->
         this.each ()->
             columns = $(this).find(column_selector)
-
+            timer = null
+						
             if columns.length is 0
                 columns = $(this).children(column_selector)
 
             # Stop if there is no column selected
             if columns.length is 0 then return
-
             #
             # _equalize_marked_columns: a function that equalize
             # height values of marked column elements
@@ -32,8 +32,7 @@ $.fn.extend
                 # Get max height of marked_columns
                 max_col_height = 0
                 marked_columns.each () ->
-                    if $(this).height() > max_col_height
-                        max_col_height = $(this).height()
+                    max_col_height = Math.max($(this).height(), max_col_height);
 
                 # Set all marked_columns to max_col_height
                 marked_columns.height(max_col_height)
@@ -67,12 +66,16 @@ $.fn.extend
                 # Equalize heights of marked columns
                 _equalize_marked_columns()
 
+            # Lets prevent a repaint proces on resizing and only resize if we
+						# are done resizing.
+						        start_equalizing = () ->
+                        clearTimeout(timer)
+                        timer = setTimeout(equalizer, 100);
+
             #
             # Call equalizer()
             #
-
             # Equalize column heights after all contents on the page have been loaded
             $(window).load(equalizer)
-
             # Equalize column heights on resize
-            $(window).resize(equalizer)
+            $(window).resize(start_equalizing)
