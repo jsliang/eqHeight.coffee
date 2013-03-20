@@ -67,10 +67,10 @@ $.fn.extend
                 _equalize_marked_columns()
 
             # Lets prevent a repaint proces on resizing and only resize if we
-						# are done resizing.
-						        start_equalizing = () ->
-                        clearTimeout(timer)
-                        timer = setTimeout(equalizer, 100);
+            # are done resizing.
+            start_equalizing = () ->
+                clearTimeout(timer)
+                timer = setTimeout(equalizer, 100);
 
             #
             # Call equalizer()
