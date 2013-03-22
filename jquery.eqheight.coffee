@@ -1,5 +1,5 @@
 ###
-eqHeight.coffee v1.2.3
+eqHeight.coffee v1.2.4
 http://jsliang.github.com/eqHeight.coffee
 
 Copyright (c) 2013, Jui-Shan Liang <jenny@jsliang.com>
@@ -16,7 +16,7 @@ $.fn.extend
         this.each ()->
             columns = $(this).find(column_selector)
             timer = null
-						
+
             if columns.length is 0
                 columns = $(this).children(column_selector)
 
@@ -32,7 +32,7 @@ $.fn.extend
                 # Get max height of marked_columns
                 max_col_height = 0
                 marked_columns.each () ->
-                    max_col_height = Math.max($(this).height(), max_col_height);
+                    max_col_height = Math.max($(this).height(), max_col_height)
 
                 # Set all marked_columns to max_col_height
                 marked_columns.height(max_col_height)
@@ -66,16 +66,18 @@ $.fn.extend
                 # Equalize heights of marked columns
                 _equalize_marked_columns()
 
-            # Lets prevent a repaint proces on every resize event and only 
+            # Lets prevent a repaint proces on every resize event and only
             # equalize if we are done resizing.
             start_equalizing = () ->
                 clearTimeout(timer)
-                timer = setTimeout(equalizer, 100);
+                timer = setTimeout(equalizer, 100)
 
             #
             # Call equalizer()
             #
+
             # Equalize column heights after all contents on the page have been loaded
             $(window).load(equalizer)
+
             # Equalize column heights on resize
             $(window).resize(start_equalizing)
