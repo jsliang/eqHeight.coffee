@@ -1,6 +1,6 @@
 
 /*
-eqHeight.coffee v1.2.5
+eqHeight.coffee v1.2.6
 http://jsliang.github.com/eqHeight.coffee
 
 Copyright (c) 2013, Jui-Shan Liang <jenny@jsliang.com>
@@ -15,9 +15,12 @@ Licensed under GPL v2.
   $ = jQuery;
 
   $.fn.extend({
-    eqHeight: function(column_selector) {
+    eqHeight: function(column_selector, always_reload) {
+      if (always_reload == null) {
+        always_reload = false;
+      }
       return this.each(function() {
-        var columns, equalizer, start_equalizing, timer, _equalize_marked_columns;
+        var columns, equalizer, infinite_equalizing, start_equalizing, timer, _equalize_marked_columns;
         columns = $(this).find(column_selector);
         timer = null;
         if (columns.length === 0) {
@@ -55,8 +58,16 @@ Licensed under GPL v2.
           clearTimeout(timer);
           return timer = setTimeout(equalizer, 100);
         };
+        infinite_equalizing = function() {
+          equalizer();
+          return timer = setTimeout(infinite_equalizing, 100);
+        };
         $(window).load(equalizer);
-        return columns.resize(start_equalizing);
+        if (always_reload) {
+          return infinite_equalizing();
+        } else {
+          return $(window).resize(start_equalizing);
+        }
       });
     }
   });
