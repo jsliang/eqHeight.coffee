@@ -1,6 +1,6 @@
 
 /*
-eqHeight.coffee v1.2.4
+eqHeight.coffee v1.2.5
 http://jsliang.github.com/eqHeight.coffee
 
 Copyright (c) 2013, Jui-Shan Liang <jenny@jsliang.com>
@@ -56,7 +56,7 @@ Licensed under GPL v2.
           return timer = setTimeout(equalizer, 100);
         };
         $(window).load(equalizer);
-        return $(window).resize(start_equalizing);
+        return columns.resize(start_equalizing);
       });
     }
   });

@@ -1,5 +1,5 @@
 ###
-eqHeight.coffee v1.2.4
+eqHeight.coffee v1.2.5
 http://jsliang.github.com/eqHeight.coffee
 
 Copyright (c) 2013, Jui-Shan Liang <jenny@jsliang.com>
@@ -80,4 +80,4 @@ $.fn.extend
             $(window).load(equalizer)
 
             # Equalize column heights on resize
-            $(window).resize(start_equalizing)
+            columns.resize(start_equalizing)
