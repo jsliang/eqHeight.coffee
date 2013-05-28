@@ -1,5 +1,5 @@
 ###
-eqHeight.coffee v1.2.5
+eqHeight.coffee v1.2.6
 http://jsliang.github.com/eqHeight.coffee
 
 Copyright (c) 2013, Jui-Shan Liang <jenny@jsliang.com>
@@ -12,7 +12,7 @@ $ = jQuery
 
 # Adds plugin object to jQuery
 $.fn.extend
-    eqHeight: (column_selector) ->
+    eqHeight: (column_selector, always_reload = false) ->
         this.each ()->
             columns = $(this).find(column_selector)
             timer = null
@@ -72,6 +72,10 @@ $.fn.extend
                 clearTimeout(timer)
                 timer = setTimeout(equalizer, 100)
 
+            infinite_equalizing = () ->
+                equalizer()
+                timer = setTimeout(infinite_equalizing, 100)
+
             #
             # Call equalizer()
             #
@@ -80,4 +84,7 @@ $.fn.extend
             $(window).load(equalizer)
 
             # Equalize column heights on resize
-            columns.resize(start_equalizing)
+            if always_reload
+                infinite_equalizing()
+            else
+                $(window).resize(start_equalizing)
