@@ -93,7 +93,7 @@ If `equalize_interval` is specified with a number value, for example, `500`, the
 
 ```javascript
 /* call the equalizing function every 500ms*/
-$(".row").eqHeight(".column", {equalize_interval = 500});
+$(".row").eqHeight(".column", {equalize_interval: 500});
 ```
 
 ### Use with existing responsive grid systems

@@ -17,15 +17,16 @@ Licensed under GPL v2.
 
   $.fn.extend({
     eqHeight: function(column_selector, option) {
+      var timer;
       if (option == null) {
         option = {
           equalize_interval: null
         };
       }
+      timer = null;
       return this.each(function() {
-        var columns, equalizer, infinite_equalizing, start_equalizing, timer, _equalize_marked_columns;
+        var columns, equalizer, infinite_equalizing, start_equalizing, _equalize_marked_columns;
         columns = $(this).find(column_selector);
-        timer = null;
         if (columns.length === 0) {
           columns = $(this).children(column_selector);
         }
@@ -61,13 +62,13 @@ Licensed under GPL v2.
           clearTimeout(timer);
           return timer = setTimeout(equalizer, 100);
         };
-        infinite_equalizing = function(equalize_interval) {
+        infinite_equalizing = function() {
           equalizer();
-          return timer = setTimeout(infinite_equalizing, equalize_interval);
+          return timer = setTimeout(infinite_equalizing, option.equalize_interval);
         };
         $(window).load(equalizer);
         if (typeof option.equalize_interval === "number") {
-          return infinite_equalizing(equalize_interval);
+          return infinite_equalizing();
         } else {
           return $(window).resize(start_equalizing);
         }
