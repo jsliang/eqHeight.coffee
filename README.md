@@ -85,6 +85,19 @@ $(".row").eqHeight();
 ```
 in this case because &lt;div class="column"&gt; elements are top level children of &lt;div class="row"&gt; elements.
 
+#### Options
+
+By default, the equalizing function is called only on window resize.
+You can change this default behavior by setting the `equalize_interval` option.
+If `equalize_interval` is specified with a number value, for example, `500`, then the equalizing function is called every 500ms:
+
+```javascript
+/* call the equalizing function every 500ms*/
+$(".row").eqHeight(".column", {equalize_interval = 500});
+```
+
+### Use with existing responsive grid systems
+
 You can use eqHeight with existing responsive grid systems that have similar structures.
 We'll demonstrate some of them here.
 
