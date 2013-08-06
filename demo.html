@@ -20,7 +20,7 @@
         clear: both;
     }
 
-    .row
+    .row, .row_interval
     {
         background-color: rgb(255, 255, 180);
         margin-bottom: 2em;
@@ -44,7 +44,7 @@
         line-height: 0;
         height: 0;
     }
-     
+
     .clearfix {
         display: inline-block;
     }
@@ -55,6 +55,16 @@
     $(document).ready(function() {
         //$(".row.eqheight").eqHeight(".column");
         $(".row.eqheight").eqHeight();
+        $(".row_interval.eqheight").eqHeight(".column", {equalize_interval: 5000});
+
+        function countdown() {
+            var val = $("#timer").text();
+            val -= 1;
+            if (val == 0) val = 5;
+            $("#timer").text(val);
+            return setTimeout(countdown, 1000);
+        }
+        countdown("#timer");
     });
     </script>
 
@@ -150,6 +160,43 @@
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
         <div class="row clearfix eqheight">
+            <div class="column">
+                <p>Line 1</p>
+                <p>Line 2</p>
+                <p>Line 3</p>
+                <p>Line 4</p>
+            </div>
+            <div class="column">
+                <p>Line 1</p>
+                <p>Line 2</p>
+                <p>Line 3</p>
+                <p>Line 4</p>
+                <p>Line 5</p>
+            </div>
+            <div class="column">
+                <p>Line 1</p>
+            </div>
+            <div class="column">
+                <p>Line 1</p>
+                <p>Line 2</p>
+                <p>Line 3</p>
+            </div>
+        </div>
+
+        <h3>
+        <a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h4>
+
+        <p>By default, the equalizing function is called only on window resize.
+        You can change this default behavior by setting the <code>equalize_interval</code> option.
+        If <code>equalize_interval</code> is specified with a number value, for example, <code>5000</code>, then the equalizing function is called every 5 seconds:</p>
+
+        <div class="highlight"><pre><span class="cm">/* call the equalizing function every 5000ms*/</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">(</span><span class="s2">".column"</span><span class="p">,</span> <span class="p">{</span><span class="nx">equalize_interval</span><span class="o">:</span> <span class="mi">5000</span><span class="p">});</span></pre></div>
+
+        Try resizing the window, and see how the columns relayout after the 5-sec countdown.
+
+        <div class="row_interval clearfix eqheight">
+            <p align="center">&nbsp;<br/>Timer: <span id="timer">1</span></p>
             <div class="column">
                 <p>Line 1</p>
                 <p>Line 2</p>
