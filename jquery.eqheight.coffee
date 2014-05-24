@@ -1,5 +1,5 @@
 ###
-eqHeight.coffee v1.2.8
+eqHeight.coffee v1.2.9
 http://jsliang.github.com/eqHeight.coffee
 
 Copyright (c) 2013, Jui-Shan Liang <jenny@jsliang.com>
@@ -13,9 +13,10 @@ $ = jQuery
 # Adds plugin object to jQuery
 $.fn.extend
     eqHeight: (column_selector, option = {equalize_interval: null}) ->
-        timer = null
-
         this.each ()->
+            # each row needs a timer
+            timer = null
+
             columns = $(this).find(column_selector)
 
             if columns.length is 0
