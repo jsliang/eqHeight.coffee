@@ -22,7 +22,7 @@ Find us on our [Github Repository] & [Github Pages].
 
 ### Download eqHeight
 
-Download `jquery.eqheight.js` from [Github](http://github.com/jsliang/eqHeight.coffee).
+Download `jquery.eqheight.js` from [Github](http://github.com/jsliang/eqHeight.coffee) or [jQuery Plugins Registry](http://plugins.jquery.com/eqHeight/).
 
 ### Put eqHeight in your page
 
