@@ -59,14 +59,14 @@ Furthurmore, eqHeight resets columns to their default height values when columns
 <h3>
 <a name="download-eqheight" class="anchor" href="#download-eqheight"><span class="octicon octicon-link"></span></a>Download eqHeight</h3>
 
-<p>Download <code>jquery.eqheight.js</code> from <a href="http://github.com/jsliang/eqHeight.coffee">Github</a>.</p>
+<p>Download <code>jquery.eqheight.js</code> from <a href="http://github.com/jsliang/eqHeight.coffee">Github</a> or <a href="http://plugins.jquery.com/eqHeight/">jQuery Plugins Registry</a>.</p>
 
 <h3>
 <a name="put-eqheight-in-your-page" class="anchor" href="#put-eqheight-in-your-page"><span class="octicon octicon-link"></span></a>Put eqHeight in your page</h3>
 
 <p>Please note that you have to include eqHeight after jQuery.</p>
 
-<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!-- put eqHeight after jQuery --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.eqheight.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
@@ -81,7 +81,7 @@ eqHeight selects the top level children of row containers as columns by default.
 
 <p>Say your HTML looks like this:</p>
 
-<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span> <span class="na">style=</span><span class="s">"display: block; clear: both;"</span><span class="nt">&gt;</span>
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span> <span class="na">style=</span><span class="s">"display: block; clear: both;"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"column"</span> <span class="na">style=</span><span class="s">"display: block; float: left; width: 200px;"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
         <span class="nt">&lt;p&gt;</span>Line 2<span class="nt">&lt;/p&gt;</span>
@@ -108,7 +108,7 @@ eqHeight selects the top level children of row containers as columns by default.
 
 <p>A simple eqHeight setup for the above HTML would be:</p>
 
-<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">(</span><span class="s2">".column"</span><span class="p">);</span>
 <span class="p">});</span>
@@ -117,7 +117,7 @@ eqHeight selects the top level children of row containers as columns by default.
 
 <p>You can also use</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">();</span>
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">();</span>
 </pre></div>
 
 <p>in this case because &lt;div class="column"&gt; elements are top level children of &lt;div class="row"&gt; elements.</p>
@@ -129,7 +129,7 @@ eqHeight selects the top level children of row containers as columns by default.
 You can change this default behavior by setting the <code>equalize_interval</code> option.
 If <code>equalize_interval</code> is specified with a number value, for example, <code>500</code>, then the equalizing function is called every 500ms:</p>
 
-<div class="highlight"><pre><span class="cm">/* call the equalizing function every 500ms*/</span>
+<div class="highlight highlight-javascript"><pre><span class="cm">/* call the equalizing function every 500ms*/</span>
 <span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">(</span><span class="s2">".column"</span><span class="p">,</span> <span class="p">{</span><span class="nx">equalize_interval</span><span class="o">:</span> <span class="mi">500</span><span class="p">});</span>
 </pre></div>
 
@@ -144,7 +144,7 @@ We'll demonstrate some of them here.</p>
 
 <p>If you're using <a href="http://twitter.github.com/bootstrap">Twitter Bootstrap</a>, the idea is the same:</p>
 
-<div class="highlight"><pre><span class="c">&lt;!-- include Bootstrap javascript files first --&gt;</span>
+<div class="highlight highlight-html"><pre><span class="c">&lt;!-- include Bootstrap javascript files first --&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"span3"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
@@ -175,7 +175,7 @@ We'll demonstrate some of them here.</p>
 
 <p>A sample for using <a href="http://responsive.gs/">Responsive GS</a> with eqHeight.coffee:</p>
 
-<div class="highlight"><pre><span class="c">&lt;!-- include Responsive GS files here --&gt;</span>
+<div class="highlight highlight-html"><pre><span class="c">&lt;!-- include Responsive GS files here --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col span_3"</span><span class="nt">&gt;</span>
