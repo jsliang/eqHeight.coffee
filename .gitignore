@@ -1,6 +1,11 @@
 /.coffeescript-cache
 /.sass-cache
-/stylesheets
+/Font-Awesome/docs
+/javascripts/bootstrap-alert.js
+/javascripts/bootstrap-button.js
+/javascripts/bootstrap-carousel.js
+/javascripts/bootstrap-collapse.js
+/javascripts/bootstrap-dropdown.js
 /javascripts/bootstrap-modal.js
 /javascripts/bootstrap-popover.js
 /javascripts/bootstrap-scrollspy.js
@@ -9,9 +14,5 @@
 /javascripts/bootstrap-transition.js
 /javascripts/bootstrap-typeahead.js
 /javascripts/jposty.js
-/javascripts/bootstrap-alert.js
-/javascripts/bootstrap-button.js
-/javascripts/bootstrap-carousel.js
-/javascripts/bootstrap-collapse.js
-/javascripts/bootstrap-dropdown.js
-/Font-Awesome/docs
+/stylesheets
+node_modules
