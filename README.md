@@ -185,7 +185,7 @@ If you're contributing to eqHeight.coffee, make sure to modify `jquery.eqheight.
 
 ## License
 
-Copyright (c) 2013, Jui-Shan Liang &lt;jenny@jsliang.com&gt;
+Copyright (c) 2013-2014, Jui-Shan Liang &lt;jenny@jsliang.com&gt;
 
 All rights reserved.
 
