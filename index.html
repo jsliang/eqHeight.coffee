@@ -1,0 +1,250 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>eqHeight.coffee by jsliang</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>eqHeight.coffee</h1>
+        <p>eqHeight.coffee is a jQuery plugin that stretches fluid columns to equal height. It is originally designed to be used in responsive web design.</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/jsliang/eqHeight.coffee" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/jsliang/eqHeight.coffee/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/jsliang/eqHeight.coffee/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
+<a name="eqheightcoffee" class="anchor" href="#eqheightcoffee"><span class="octicon octicon-link"></span></a>eqHeight.coffee</h1>
+
+<p><strong>eqHeight.coffee</strong> is a jQuery plugin that stretches fluid columns to equal height. It is originally designed to be used in responsive web design.
+A <a href="http://jsliang.github.com/eqHeight.coffee/demo.html">live demo</a> is available.</p>
+
+<p>With eqHeight applied, floating columns in the same row container are always stretched to the height of the tallest one.
+For better visual experience on mobile devices, eqHeight adjusts column heights as window resizes.
+Furthurmore, eqHeight resets columns to their default height values when columns are stacked together on small displays.</p>
+
+<p>eqHeight currently supports <a href="http://twitter.github.com/bootstrap">Twitter Bootstrap</a> and <a href="http://responsive.gs/">Responsive GS</a>. Supports for more responsive design grid systems to be added.</p>
+
+<p>Find us on our <a href="http://github.com/jsliang/eqHeight.coffee">Github Repository</a> &amp; <a href="http://jsliang.github.com/eqHeight.coffee">Github Pages</a>.</p>
+
+<h2>
+<a name="how-to-use" class="anchor" href="#how-to-use"><span class="octicon octicon-link"></span></a>How to Use</h2>
+
+<h3>
+<a name="download-eqheight" class="anchor" href="#download-eqheight"><span class="octicon octicon-link"></span></a>Download eqHeight</h3>
+
+<p>Download <code>jquery.eqheight.js</code> from <a href="http://github.com/jsliang/eqHeight.coffee">Github</a> or <a href="http://plugins.jquery.com/eqHeight/">jQuery Plugins Registry</a>.</p>
+
+<h3>
+<a name="put-eqheight-in-your-page" class="anchor" href="#put-eqheight-in-your-page"><span class="octicon octicon-link"></span></a>Put eqHeight in your page</h3>
+
+<p>Please note that you have to include eqHeight after jQuery.</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- put eqHeight after jQuery --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.eqheight.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<h3>
+<a name="use-eqheight-in-your-page" class="anchor" href="#use-eqheight-in-your-page"><span class="octicon octicon-link"></span></a>Use eqHeight in your page</h3>
+
+<p>Using eqHeight is simple.
+You have to specify a CSS3 selector for row containers, and <em>optionally</em> a CSS3 selector for columns <strong>inside those row containers</strong>.
+eqHeight selects the top level children of row containers as columns by default.</p>
+
+<p>Say your HTML looks like this:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span> <span class="na">style=</span><span class="s">"display: block; clear: both;"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"column"</span> <span class="na">style=</span><span class="s">"display: block; float: left; width: 200px;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 2<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 3<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 4<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"column"</span> <span class="na">style=</span><span class="s">"display: block; float: left; width: 200px;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 2<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 3<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 4<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 5<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"column"</span> <span class="na">style=</span><span class="s">"display: block; float: left; width: 200px;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"column"</span> <span class="na">style=</span><span class="s">"display: block; float: left; width: 200px;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 2<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 3<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<p>A simple eqHeight setup for the above HTML would be:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">(</span><span class="s2">".column"</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<p>You can also use</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">();</span>
+</pre></div>
+
+<p>in this case because &lt;div class="column"&gt; elements are top level children of &lt;div class="row"&gt; elements.</p>
+
+<h4>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h4>
+
+<p>By default, the equalizing function is called only on window resize.
+You can change this default behavior by setting the <code>equalize_interval</code> option.
+If <code>equalize_interval</code> is specified with a number value, for example, <code>500</code>, then the equalizing function is called every 500ms:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="cm">/* call the equalizing function every 500ms*/</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">(</span><span class="s2">".column"</span><span class="p">,</span> <span class="p">{</span><span class="nx">equalize_interval</span><span class="o">:</span> <span class="mi">500</span><span class="p">});</span>
+</pre></div>
+
+<h3>
+<a name="use-with-existing-responsive-grid-systems" class="anchor" href="#use-with-existing-responsive-grid-systems"><span class="octicon octicon-link"></span></a>Use with existing responsive grid systems</h3>
+
+<p>You can use eqHeight with existing responsive grid systems that have similar structures.
+We'll demonstrate some of them here.</p>
+
+<h4>
+<a name="twitter-bootstrap" class="anchor" href="#twitter-bootstrap"><span class="octicon octicon-link"></span></a>Twitter Bootstrap</h4>
+
+<p>If you're using <a href="http://twitter.github.com/bootstrap">Twitter Bootstrap</a>, the idea is the same:</p>
+
+<div class="highlight highlight-html"><pre><span class="c">&lt;!-- include Bootstrap javascript files first --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"span3"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 2<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 3<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 4<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"span4"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 2<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 3<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 4<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 5<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"span5"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Line 1<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">".row, .row-fluid"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">(</span><span class="s2">".span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12"</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<h4>
+<a name="responsive-gs" class="anchor" href="#responsive-gs"><span class="octicon octicon-link"></span></a>Responsive GS</h4>
+
+<p>A sample for using <a href="http://responsive.gs/">Responsive GS</a> with eqHeight.coffee:</p>
+
+<div class="highlight highlight-html"><pre><span class="c">&lt;!-- include Responsive GS files here --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col span_3"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;p&gt;</span>1-1<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;p&gt;</span>1-2<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;p&gt;</span>1-3<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;p&gt;</span>1-4<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col span_4"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;p&gt;</span>2-1<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;p&gt;</span>2-2<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;p&gt;</span>2-3<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;p&gt;</span>2-4<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;p&gt;</span>2-5<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col span_5"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;p&gt;</span>3-1<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">(</span><span class="s2">".col"</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<h4>
+<a name="responsive-sass-grid" class="anchor" href="#responsive-sass-grid"><span class="octicon octicon-link"></span></a>Responsive-SASS-Grid</h4>
+
+<p>A live demo using <a href="https://github.com/carlopogus/Responsive-SASS-Grid">carlopogus/Responsive-SASS-Grid</a> with eqHeight.coffee can be found <a href="http://jsliang.com/Responsive-SASS-Grid/">here</a>.
+See <a href="https://github.com/jsliang/eqHeight.coffee/issues/2">issue #2</a> for more details.</p>
+
+<h2>
+<a name="any-comments" class="anchor" href="#any-comments"><span class="octicon octicon-link"></span></a>Any Comments?</h2>
+
+<p>If you have any comments, or you found any bugs to report, please post them in <a href="http://github.com/jsliang/eqHeight.coffee/issues">Issues</a>.</p>
+
+<h2>
+<a name="developing-eqheightcoffee" class="anchor" href="#developing-eqheightcoffee"><span class="octicon octicon-link"></span></a>Developing eqHeight.coffee</h2>
+
+<p>eqHeight.coffee is written in <a href="http://coffeescript.org/">CoffeeScript</a>.</p>
+
+<p>If you're contributing to eqHeight.coffee, make sure to modify <code>jquery.eqheight.coffee</code>, not <code>jquery.eqheight.js</code>.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Copyright (c) 2013, Jui-Shan Liang &lt;<a href="mailto:jenny@jsliang.com">jenny@jsliang.com</a>&gt;</p>
+
+<p>All rights reserved.</p>
+
+<p>Licensed under GPL v2.</p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/jsliang">jsliang</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-37740364-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
