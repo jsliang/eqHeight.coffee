@@ -18,7 +18,8 @@ Licensed under GPL v2.
     eqHeight: function(column_selector, option) {
       if (option == null) {
         option = {
-          equalize_interval: null
+          equalize_interval: null,
+		  breakPoint: null
         };
       }
       return this.each(function() {
@@ -58,7 +59,15 @@ Licensed under GPL v2.
         };
         start_equalizing = function() {
           clearTimeout(timer);
-          return timer = setTimeout(equalizer, 100);
+		  if (typeof option.breakPoint === "number"){
+			if($(window).width()> option.breakPoint){
+				return timer = setTimeout(equalizer, 100);
+			}else{
+				columns.height("auto");	
+			}
+		  }else{
+	          return timer = setTimeout(equalizer, 100);
+		  }
         };
         infinite_equalizing = function() {
           equalizer();
