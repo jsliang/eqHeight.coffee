@@ -1,8 +1,8 @@
 ###
-eqHeight.coffee v1.2.9
+eqHeight.coffee v1.3.1
 http://jsliang.github.com/eqHeight.coffee
 
-Copyright (c) 2013, Jui-Shan Liang <jenny@jsliang.com>
+Copyright (c) 2013-2014, Jui-Shan Liang <jenny@jsliang.com>
 All rights reserved.
 Licensed under GPL v2.
 ###
@@ -12,7 +12,7 @@ $ = jQuery
 
 # Adds plugin object to jQuery
 $.fn.extend
-    eqHeight: (column_selector, option = {equalize_interval: null}) ->
+    eqHeight: (column_selector, option = {equalize_interval: null, breakPoint: null}) ->
         this.each ()->
             # each row needs a timer
             timer = null
@@ -49,6 +49,10 @@ $.fn.extend
             equalizer = () ->
                 # Reset column height to default
                 columns.height("auto")
+
+                # do not equalize columns when browser display size is under breakPoint
+                if typeof option.breakPoint is "number" and $(window).width() <= option.breakPoint
+                    return
 
                 # Group columns by rows
                 row_top_value = columns.first().position().top
