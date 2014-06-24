@@ -87,20 +87,27 @@ in this case because &lt;div class="column"&gt; elements are top level children 
 
 #### Options
 
-#####equialize_interval
+##### equalize_interval
 By default, the equalizing function is called only on window resize.
 You can change this default behavior by setting the `equalize_interval` option.
 If `equalize_interval` is specified with a number value, for example, `500`, then the equalizing function is called every 500ms:
-#####breakPoint
-minimum width `breakPoint` option under which the plug-in will be ignored.
-
-This is useful for responsive designs, in which floating element should be the same height side by side, but for smaller screens the elements are stacked and should have auto height.
 
 ```javascript
 /* call the equalizing function every 500ms*/
 $(".row").eqHeight(".column", {
-    equalize_interval: 500, 
-    breakPoint:568
+    equalize_interval: 500
+});
+```
+
+##### breakPoint
+You can set minimum width under which the plug-in will be ignored with the `breakPoint` option.
+
+This is useful for responsive designs, in which floating element should be the same height side by side, but for smaller screens the elements are stacked and should have auto height.
+
+```javascript
+/* do not call the equalizing function when display width is under 568px*/
+$(".row").eqHeight(".column", {
+    breakPoint: 568
 });
 ```
 
