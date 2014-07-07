@@ -125,12 +125,30 @@ eqHeight selects the top level children of row containers as columns by default.
 <h4>
 <a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h4>
 
+<h5>
+<a name="equalize_interval" class="anchor" href="#equalize_interval"><span class="octicon octicon-link"></span></a>equalize_interval</h5>
+
 <p>By default, the equalizing function is called only on window resize.
 You can change this default behavior by setting the <code>equalize_interval</code> option.
 If <code>equalize_interval</code> is specified with a number value, for example, <code>500</code>, then the equalizing function is called every 500ms:</p>
 
 <div class="highlight highlight-javascript"><pre><span class="cm">/* call the equalizing function every 500ms*/</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">(</span><span class="s2">".column"</span><span class="p">,</span> <span class="p">{</span><span class="nx">equalize_interval</span><span class="o">:</span> <span class="mi">500</span><span class="p">});</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">(</span><span class="s2">".column"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">equalize_interval</span><span class="o">:</span> <span class="mi">500</span>
+<span class="p">});</span>
+</pre></div>
+
+<h5>
+<a name="break_point" class="anchor" href="#break_point"><span class="octicon octicon-link"></span></a>break_point</h5>
+
+<p>You can set minimum width under which the plug-in will be ignored with the <code>break_point</code> option.</p>
+
+<p>This is useful for responsive designs, in which floating element should be the same height side by side, but for smaller screens the elements are stacked and should have auto height.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="cm">/* do not call the equalizing function when display width is under 568px*/</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">".row"</span><span class="p">).</span><span class="nx">eqHeight</span><span class="p">(</span><span class="s2">".column"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">break_point</span><span class="o">:</span> <span class="mi">568</span>
+<span class="p">});</span>
 </pre></div>
 
 <h3>
@@ -223,7 +241,7 @@ See <a href="https://github.com/jsliang/eqHeight.coffee/issues/2">issue #2</a> f
 <h2>
 <a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
 
-<p>Copyright (c) 2013, Jui-Shan Liang &lt;<a href="mailto:jenny@jsliang.com">jenny@jsliang.com</a>&gt;</p>
+<p>Copyright (c) 2013-2014, Jui-Shan Liang &lt;<a href="mailto:jenny@jsliang.com">jenny@jsliang.com</a>&gt;</p>
 
 <p>All rights reserved.</p>
 
