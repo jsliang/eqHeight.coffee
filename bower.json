@@ -1,0 +1,23 @@
+{
+  "name": "eqheight-coffee",
+  "version": "1.2.9",
+  "homepage": "https://github.com/jsliang/eqHeight.coffee",
+  "authors": [
+    "Jui-Shan Liang <jsliang.tw@gmail.com>"
+  ],
+  "description": "eqHeight.coffee is a jQuery plugin that stretches fluid columns to equal height.",
+  "main": "jquery.eqheight.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "responsive",
+    "column",
+    "columns",
+    "same",
+    "equal",
+    "height",
+    "heights"
+  ],
+  "license": "MIT"
+}
