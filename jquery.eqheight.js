@@ -37,7 +37,7 @@ Licensed under GPL v2.
           marked_columns = $(".eqHeight_row");
           max_col_height = 0;
           marked_columns.each(function() {
-            return max_col_height = Math.max($(this).height(), max_col_height);
+            return max_col_height = Math.max($(this).outerHeight(), max_col_height);
           });
           marked_columns.height(max_col_height);
           return $(".eqHeight_row").removeClass("eqHeight_row");

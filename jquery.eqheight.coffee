@@ -34,7 +34,7 @@ $.fn.extend
                 # Get max height of marked_columns
                 max_col_height = 0
                 marked_columns.each () ->
-                    max_col_height = Math.max($(this).height(), max_col_height)
+                    max_col_height = Math.max($(this).outerHeight(), max_col_height)
 
                 # Set all marked_columns to max_col_height
                 marked_columns.height(max_col_height)
