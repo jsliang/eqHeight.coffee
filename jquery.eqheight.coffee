@@ -1,5 +1,5 @@
 ###
-eqHeight.coffee v1.3.2
+eqHeight.coffee v1.3.4
 http://jsliang.github.com/eqHeight.coffee
 
 Copyright (c) 2013-2014, Jui-Shan Liang <jenny@jsliang.com>
