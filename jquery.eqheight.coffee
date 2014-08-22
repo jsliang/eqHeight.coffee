@@ -24,6 +24,7 @@ $.fn.extend
 
             # Stop if there is no column selected
             if columns.length is 0 then return
+
             #
             # _equalize_marked_columns: a function that equalize
             # height values of marked column elements
@@ -45,7 +46,6 @@ $.fn.extend
             #
             # equalizer: a function that equalizes column heights
             #
-
             equalizer = () ->
                 # Reset column height to default
                 columns.height("auto")
@@ -89,8 +89,9 @@ $.fn.extend
             # Equalize column heights after all contents on the page have been loaded
             $(window).load(equalizer)
 
-            # Equalize column heights on resize
             if typeof option.equalize_interval is "number"
+                # Equalize column heights on every option.equalize_interval ms
                 infinite_equalizing()
             else
+                # Equalize column heights on resize
                 $(window).resize(start_equalizing)
