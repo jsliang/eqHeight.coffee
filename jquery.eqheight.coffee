@@ -1,5 +1,5 @@
 ###
-eqHeight.coffee v1.3.4
+eqHeight.coffee v1.3.5
 http://jsliang.github.com/eqHeight.coffee
 
 Copyright (c) 2013-2014, Jui-Shan Liang <jenny@jsliang.com>
@@ -20,7 +20,7 @@ $.fn.extend
             columns = $(this).find(column_selector)
 
             if columns.length is 0
-                columns = $(this).children(column_selector)
+                columns = $(this).children()
 
             # Stop if there is no column selected
             if columns.length is 0 then return
