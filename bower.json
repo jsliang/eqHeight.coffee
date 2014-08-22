@@ -3,7 +3,7 @@
   "version": "1.3.4",
   "homepage": "https://github.com/jsliang/eqHeight.coffee",
   "authors": [
-    "Jui-Shan Liang <jsliang.tw@gmail.com>"
+    "Jui-Shan Liang <jenny@jsliang.com>"
   ],
   "description": "eqHeight.coffee is a jQuery plugin that stretches fluid columns to equal height.",
   "main": "jquery.eqheight.js",
