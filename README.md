@@ -24,6 +24,12 @@ Find us on our [Github Repository] & [Github Pages].
 
 Download `jquery.eqheight.js` from [Github](http://github.com/jsliang/eqHeight.coffee) or [jQuery Plugins Registry](http://plugins.jquery.com/eqHeight/).
 
+You can install via [Bower](http://bower.io/) as well:
+
+```
+bower install eqheight-coffee
+```
+
 ### Put eqHeight in your page
 
 Please note that you have to include eqHeight after jQuery.
